@@ -23,7 +23,7 @@ RUN update-alternatives --install "/usr/bin/ant" "ant" "/opt/ant/bin/ant" 1 && \
 
 #Adding Commands to install Git
 RUN apt-get update
-RUN apt-get install git-core
+RUN apt-get -y install git-core
 
 #Adding Git Global Credentials 
 RUN git config --global user.name "A0757116"
