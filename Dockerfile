@@ -21,6 +21,14 @@ RUN wget --no-check-certificate --no-cookies http://archive.apache.org/dist/ant/
 RUN update-alternatives --install "/usr/bin/ant" "ant" "/opt/ant/bin/ant" 1 && \
     update-alternatives --set "ant" "/opt/ant/bin/ant" 
 
+#Adding Commands to install Git
+RUN apt-get update \
+    && apt-get install git-core \
+
+#Adding Git Global Credentials 
+RUN git config --global user.name "A0757116" \
+    && git config --global user.email arjun.kumar.selvamani@aon.com
+    
 # Add the files
 ADD rootfs /
 
